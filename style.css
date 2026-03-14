@@ -1,0 +1,228 @@
+/* ===== Global ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Syne', sans-serif;
+  background-color: #f0f4fb;
+  color: #eaeff2;
+}
+
+/* ===== Login Card ===== */
+.login-card {
+  background: #ffffff;
+  border: 1px solid #e7e9eb;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 0 40px rgba(177, 181, 177, 0.05), 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.4s ease;
+}
+
+.logo-ring {
+  background: linear-gradient(135deg, #3fb950, #8957e5);
+  padding: 3px;
+}
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.or-divider span {
+  padding: 0 12px;
+  color: #555;
+  font-weight: bold;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Tabs ===== */
+.tab-btn {
+  border: 1px solid #575b5f;
+  cursor: pointer;
+  background: white;
+  color: #0c0c0c;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  box-shadow: #4A00FF;
+}
+
+.active-tab {
+  background: #4A00FF !important;
+  color: #ffffff !important;
+  border: 1px solid #575b5f;
+}
+
+/* ===== Cards ===== */
+.issue-card {
+  background: #ffffff;
+  border: 1px solid #d9dfe5;
+
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.issue-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(226, 223, 223, 0.4);
+}
+
+.issue-card.open-card {
+  border-top: 3px solid #3fb950;
+}
+
+.issue-card.closed-card {
+  border-top: 3px solid #8957e5;
+}
+
+.issue-card.open-card:hover {
+  border-color: #3fb950;
+  box-shadow: 0 8px 30px rgba(63, 185, 80, 0.15);
+}
+
+.issue-card.closed-card:hover {
+  border-color: #8957e5;
+  box-shadow: 0 8px 30px rgba(137, 87, 229, 0.15);
+}
+
+.badge-open {
+  background: rgba(63, 185, 80, 0.15);
+  color: #3fb950;
+  border: 1px solid rgba(63, 185, 80, 0.3);
+}
+
+.badge-closed {
+  background: rgba(137, 87, 229, 0.15);
+  color: #8957e5;
+  border: 1px solid rgba(137, 87, 229, 0.3);
+}
+
+.priority-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.priority-high {
+  background: rgba(248, 81, 73, 0.15);
+  color: #f85149;
+}
+
+.priority-medium {
+  background: rgba(240, 136, 62, 0.15);
+  color: #f0883e;
+}
+
+.priority-low {
+  background: rgba(121, 192, 255, 0.15);
+  color: #79c0ff;
+}
+
+.priority-default {
+  background: rgba(139, 148, 158, 0.15);
+  color: #8b949e;
+}
+
+.label-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(56, 139, 253, 0.1);
+  color: #58a6ff;
+  border: 1px solid rgba(56, 139, 253, 0.2);
+  font-weight: 500;
+}
+
+/* ===== Spinner ===== */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #30363d;
+  border-top-color: #3fb950;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Modal ===== */
+#issueModal {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+#modalContent {
+  animation: scaleIn 0.25s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
