@@ -19,10 +19,7 @@ body {
   animation: slideUp 0.4s ease;
 }
 
-.logo-ring {
-  background: linear-gradient(135deg, #3fb950, #8957e5);
-  padding: 3px;
-}
+
 
 .or-divider {
   display: flex;
