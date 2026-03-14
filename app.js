@@ -266,7 +266,7 @@ function renderModal(issue) {
     ? new Date(issue.updatedAt).toLocaleDateString('en-US')
     : 'N/A';
 
-
+  const colourStatus = issue.status === 'open' ? 'bg-green-500' : 'bg-red-500 ';
   const prioClass = issue.priority === 'high' ? 'bg-red-200 text-red-700'
     : issue.priority === 'medium' ? 'bg-yellow-200 text-yellow-700'
       : issue.priority === 'low' ? 'bg-gray-200 text-gray-700'
@@ -296,8 +296,8 @@ function renderModal(issue) {
       <h2 class="font-bold text-xl text-black mb-3">${issue.title}</h2>
       <div class=" flex gap-4" >
         
-         <div class="rounded-xl bg-green-500 border text-white w-[90px] h-[30px] flex items-center justify-center">
-         <h3>${issue.status}</h3>
+         <div class="rounded-xl bg-green-500 ${colourStatus}border text-white w-[90px] h-[30px] flex items-center justify-center">
+         <h3 >${issue.status}</h3>
          </div>
          <h3 class="text-slate-500 capitalize"> ${issue.status}  by ${issue.assignee}</h3>
          <h3 class="text-slate-500">${createdDate}</h3>
